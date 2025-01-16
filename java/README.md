@@ -1,4 +1,4 @@
-# Maven POM Viewer Plugin
+# SSL for IDEA Plugins
 
 A plugin for IntelliJ IDEA that allows viewing Maven POM files with SSL certificate support. This plugin provides a convenient tool window to fetch and view Maven POM files directly within your IDE, making it easier to inspect dependencies and configurations.
 
