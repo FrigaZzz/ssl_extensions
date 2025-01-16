@@ -1,0 +1,87 @@
+{
+    "name": "my-extension",
+    "displayName": "My Extension",
+    "description": "A basic VS Code extension with SSL support.",
+    "version": "0.0.1",
+    "author": {
+        "name": "Frigazzz"
+    },
+    "publisher": "undefined",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "main": "./dist/out/extension.js",
+    "contributes": {
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "apiExplorerContainer",
+                    "title": "API Explorer",
+                    "icon": "media/icon.svg"
+                }
+            ]
+        },
+        "views": {
+            "apiExplorerContainer": [
+                {
+                    "id": "apiExplorerView",
+                    "name": "API Explorer",
+                    "type": "tree",
+                    "visibility": "visible"
+                }
+            ]
+        },
+        "commands": [
+            {
+                "command": "my-extension.makeRequest",
+                "title": "Make HTTPS Request"
+            }
+        ],
+        "configuration": {
+            "title": "My Extension",
+            "properties": {
+                "myExtension.certificateFile": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Custom certificate file path (leave empty to use bundled certificate)"
+                }
+            }
+        }
+    },
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "scripts": {
+        "vscode:prepublish": "npm run build",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./dist/out/test/runTest.js",
+        "clean": "rimraf dist",
+        "copy-resources": "copyfiles -u 1 \"resources/**/*\" dist/resources/",
+        "copy-package": "copyfiles package.json README.md LICENSE dist/",
+        "build": "npm run clean && npm run compile && npm run copy-resources",
+        "package": "npm run copy-package && vsce package --out dist/"
+    },
+    "devDependencies": {
+        "@types/mocha": "^10.0.6",
+        "@types/node": "18.x",
+        "@types/vscode": "^1.85.0",
+        "@typescript-eslint/eslint-plugin": "^6.15.0",
+        "@typescript-eslint/parser": "^6.15.0",
+        "copyfiles": "^2.4.1",
+        "eslint": "^8.56.0",
+        "mocha": "^10.2.0",
+        "rimraf": "^5.0.10",
+        "typescript": "^5.3.3",
+        "vsce": "^2.15.0"
+    },
+    "files": [
+        "dist/out/**/*",
+        "dist/resources/**/*"
+    ]
+}

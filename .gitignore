@@ -1,0 +1,39 @@
+# Node.js
+node_modules/
+dist/
+out/
+*.tsbuildinfo
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VS Code
+.vscode/
+.vscode-test/
+*.vsix
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+build/
+*.class
+*.jar
+*.war
+*.ear
+*.db
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Mac OS
+.DS_Store
+
+# Miscellaneous
+*.bak
+*.swp
+*.swo
+*.env
