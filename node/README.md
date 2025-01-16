@@ -1,4 +1,4 @@
-# API Explorer Extension
+# SSL for VSCODE EXTENSIONS
 
 ## Description
 A VS Code extension for making secure HTTPS requests with built-in SSL certificate support. The extension provides an integrated interface for exploring APIs, making requests, and viewing responses directly within VS Code.
